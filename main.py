@@ -3,7 +3,6 @@ import requests
 
 app = Flask(__name__)
 
-# TU WEBHOOK DE MAKE
 MAKE_WEBHOOK = "https://hook.us2.make.com/o74gpcv5xlre3cvwnh5yr0kg6w15vrxv"
 
 @app.route("/relay", methods=["POST"])
@@ -17,4 +16,4 @@ def relay():
 
 @app.route("/")
 def home():
-    return {"status": "running"}
+    return {"status": "running"}, 200
