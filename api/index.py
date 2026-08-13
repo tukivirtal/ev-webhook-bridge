@@ -116,7 +116,7 @@ def login():
             return jsonify({"status": "error", "message": "Usuario no encontrado."}), 404
             
         usuario = res.data[0]
-        if check_password_hash(usuario.get('contrasena'), password):
+      if usuario.get('contrasena') == password:
             return jsonify({
                 "status": "exito", 
                 "datos": {
