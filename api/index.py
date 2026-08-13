@@ -77,7 +77,7 @@ def registro():
         res = supabase.table('usuarios_refugio').select('email').eq('email', email).execute()
         if len(res.data) > 0: return jsonify({"status": "existe", "message": "Correo ya registrado."}), 200
         
-        pass_hash = generate_password_hash(password)
+     pass_hash = password
         
         lat_val = data.get('lat')
         lon_val = data.get('lon')
